@@ -48,3 +48,9 @@ disciplines.
 ## Status
 
 Early development / vertical-slice production.
+
+## Concept Art
+
+The image below represents the intended visual direction and gameplay atmosphere for Salvation Journey. It is concept art and not an in-engine gameplay screenshot.
+
+![Salvation Journey Concept Art](Docs/ConceptArt/salvation_journey.png)
