@@ -1,0 +1,50 @@
+# Unity generated directories
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# IDE generated files
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.unityproj
+
+# Build outputs
+*.apk
+*.aab
+*.unitypackage
+
+# Debug and crash files
+*.pidb.meta
+*.pdb
+*.mdb
+sysinfo.txt
+crashlytics-build.properties
+
+# Android signing credentials
+*.keystore
+*.jks
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Unity temporary files
+/[Aa]ssets/AssetStoreTools/
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/
