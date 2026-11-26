@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 156141563}
   - component: {fileID: 156141562}
   - component: {fileID: 156141561}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacle_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 263600812}
   - component: {fileID: 263600811}
   - component: {fileID: 263600810}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 377670068}
   - component: {fileID: 377670067}
   - component: {fileID: 377670066}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall_North
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 397030147}
   - component: {fileID: 397030146}
   - component: {fileID: 397030145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,6 +695,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &401069008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4158730584684212668, guid: 8662710596561e04fbbf7b5c1cb57466, type: 3}
+  m_PrefabInstance: {fileID: 4686398282503220837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952895176
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +743,7 @@ GameObject:
   - component: {fileID: 961739752}
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
+  - component: {fileID: 961739754}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -863,6 +869,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961739754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961739749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3b975b676aec3b48b960c57ac928770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SalvationJourney.CameraSystem.ThirdPersonCameraController
+  target: {fileID: 401069008}
+  followDistance: 4.5
+  cameraHeight: 2
+  positionSmoothTime: 0.12
+  rotationSpeed: 12
+  horizontalSensitivity: 0.15
+  verticalSensitivity: 0.12
+  minPitch: -10
+  maxPitch: 65
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  collisionRadius: 0.25
+  collisionPadding: 0.15
+  minimumDistance: 0.5
+  collisionRecoveryTime: 0.25
 --- !u!1 &1214717981
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214717982}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ArenaBoundaries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +944,7 @@ GameObject:
   - component: {fileID: 1543817544}
   - component: {fileID: 1543817543}
   - component: {fileID: 1543817542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall_West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1056,7 @@ GameObject:
   - component: {fileID: 1584593610}
   - component: {fileID: 1584593609}
   - component: {fileID: 1584593608}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacle_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1203,7 +1237,7 @@ GameObject:
   - component: {fileID: 1626660588}
   - component: {fileID: 1626660587}
   - component: {fileID: 1626660586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacle_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1349,7 @@ GameObject:
   - component: {fileID: 1729835665}
   - component: {fileID: 1729835664}
   - component: {fileID: 1729835663}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall_South
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1424,7 +1458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1946013841}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ArenaObstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1497,7 @@ GameObject:
   - component: {fileID: 2025567332}
   - component: {fileID: 2025567331}
   - component: {fileID: 2025567330}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall_East
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1609,7 @@ GameObject:
   - component: {fileID: 2048925842}
   - component: {fileID: 2048925841}
   - component: {fileID: 2048925840}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Obstacle_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,6 +1717,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181473881638538524, guid: 8662710596561e04fbbf7b5c1cb57466, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 961739753}
     - target: {fileID: 3215152480369815061, guid: 8662710596561e04fbbf7b5c1cb57466, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

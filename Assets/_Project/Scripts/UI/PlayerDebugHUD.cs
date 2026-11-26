@@ -27,7 +27,7 @@ namespace SalvationJourney.UI
             InitializeStyles();
 
             GUILayout.BeginArea(
-                new Rect(15, 15, 270, 285),
+                new Rect(15, 15, 270, 320),
                 panelStyle
             );
 

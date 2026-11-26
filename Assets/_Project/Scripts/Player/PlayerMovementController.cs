@@ -12,6 +12,9 @@ namespace SalvationJourney.Player
         [SerializeField] private float sprintSpeed = 6f;
         [SerializeField] private float rotationSpeed = 12f;
 
+        [Header("Camera Reference")]
+        [SerializeField] private Transform cameraTransform;
+
         [Header("Gravity")]
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float groundedForce = -2f;
@@ -47,6 +50,16 @@ namespace SalvationJourney.Player
                 GetComponent<PlayerStateController>();
         }
 
+        private void Start()
+        {
+            if (cameraTransform == null &&
+                Camera.main != null)
+            {
+                cameraTransform =
+                    Camera.main.transform;
+            }
+        }
+
         private void Update()
         {
             ReadMovementInput();
@@ -63,7 +76,10 @@ namespace SalvationJourney.Player
             Keyboard keyboard = Keyboard.current;
 
             if (keyboard == null)
+            {
+                IsMoving = false;
                 return;
+            }
 
             if (keyboard.wKey.isPressed ||
                 keyboard.upArrowKey.isPressed)
@@ -100,6 +116,49 @@ namespace SalvationJourney.Player
 
             IsMoving =
                 movementInput.sqrMagnitude > 0.01f;
+        }
+
+        private Vector3 GetMovementDirection()
+        {
+            if (cameraTransform == null)
+            {
+                return new Vector3(
+                    movementInput.x,
+                    0f,
+                    movementInput.y
+                );
+            }
+
+            Vector3 cameraForward =
+                Vector3.ProjectOnPlane(
+                    cameraTransform.forward,
+                    Vector3.up
+                );
+
+            if (cameraForward.sqrMagnitude < 0.0001f)
+            {
+                cameraForward = Vector3.ProjectOnPlane(
+                    cameraTransform.up,
+                    Vector3.up
+                );
+            }
+
+            cameraForward.Normalize();
+
+            Vector3 cameraRight =
+                Vector3.Cross(
+                    Vector3.up,
+                    cameraForward
+                ).normalized;
+
+            Vector3 movementDirection =
+                cameraForward * movementInput.y +
+                cameraRight * movementInput.x;
+
+            return Vector3.ClampMagnitude(
+                movementDirection,
+                1f
+            );
         }
 
         private void UpdateSprintState()
@@ -161,13 +220,11 @@ namespace SalvationJourney.Player
             verticalVelocity +=
                 gravity * Time.deltaTime;
 
-            Vector3 movementDirection = new Vector3(
-                movementInput.x,
-                0f,
-                movementInput.y
-            );
+            Vector3 movementDirection =
+                GetMovementDirection();
 
-            if (IsMoving)
+            if (IsMoving &&
+                movementDirection.sqrMagnitude > 0.0001f)
             {
                 Quaternion targetRotation =
                     Quaternion.LookRotation(
